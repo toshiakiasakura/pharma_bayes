@@ -1,6 +1,6 @@
 ########## What is this folder for ? ###########
 
-# Thanksfully, Oomura teacher previously selected 7 main articles
+# Thanksfully, Ohmura teacher previously selected 7 main articles
 # which we want to understand in the context of 新学術領域 
 
 ######### notation for these' file names  #########
@@ -47,7 +47,7 @@ in healthy humans(3_1,3_2,etc...), and research on human with disorders(3.) ( �
 #####  4.Tryptophan制限-modelbased.pdf ##### 
 Sorry, i do not understand this article much .
 
-Method : Basic q-learning method ( as is 3. ) 
+Method : Basic q-learning method introducing punishment.  
 
 #####  5.Miyazaki-2018.pdf ##### 
 Serotonin effect on the time scale of reward prediction in terms of prob. of reward, 
@@ -55,7 +55,7 @@ reward quantity, and timing of reward.
 
 Method : Bases decision theory was used. 
 ( but this way of results tells us how we should interpret it, 
-	and how fragile statistical approach, maybe ( ・∇・)   ) 
+	and how fragile statistical approach is , maybe ( ・∇・)   ) 
 
 ##### 6.Iigaya-DRN-2018.pdf ##### 
 existing two decision making system based on time length of inter trial intervals. 
