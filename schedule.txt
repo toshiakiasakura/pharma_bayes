@@ -1,0 +1,19 @@
+##### schedule ##### 
+# Basic bases' theory, 2week ? 
+# MLE ( maximum likelihood estimation ), 2 week ? 
+# 5. these, 1 week 
+# q-learning method and type of variants, 2 week ? 
+# 3. these, 1 week
+# 7. these, 1 week 
+# 6. these, 1 week 
+# 4. these, 1 week. 
+
+############# items of leaning ############w
+# Basic bases' theory  
+- 入門ベイズ統計第1章、ベイズ更新まで。 
+# MLE ( maximum likelihood estimation ) 
+- Statistical tools for epidemiologic research / Steve Melvin , intro part 
+- 緑本　2章　
+# q-learning method and type of variants 
+- still, 
+- candidates are , hands-on ml, good web pages, or light readable theses about q-learning 
