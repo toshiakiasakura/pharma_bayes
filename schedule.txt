@@ -17,3 +17,20 @@
 # q-learning method and type of variants 
 - still, 
 - candidates are , hands-on ml, good web pages, or light readable theses about q-learning 
+
+
+
+###### items of what you should understand ###### 
+### must 
+- definition of probability density function and cumulative density function 
+- know (not remember) equations and shapes of probability density function, 
+cumulative density function for normal, binomial, poisson, gamma, beta distribution 
+- derivation of expectation and variation of distribution 
+
+### recommended tasks for getting accustomed to distributions 
+- calculate mean and variance of normal, binomial, poisson distribution. 
+( you can use Gauss integral for calculating normal distribution ) 
+
+
+
+
