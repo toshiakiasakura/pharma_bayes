@@ -1,11 +1,11 @@
 # usr/bin/python3
-
 # coding:utf-8
 
 import sys
 import os 
 import numpy as np
 import matplotlib.pyplot as plt
+import time 
 
 from PyQt5 import QtWidgets 
 from PyQt5.QtCore import Qt
@@ -57,6 +57,7 @@ class Application(QtWidgets.QMainWindow):
         self.initInfoWidget()
         self.UpdateDist()
 
+
         
         # define event when a file is changed 
         self.FileList.itemSelectionChanged.connect(self.FileListChanged)
@@ -95,11 +96,12 @@ class Application(QtWidgets.QMainWindow):
         self.Figure = plt.figure()
         # add Figure to FigureCanvas 
         self.FigureCanvas = FigureCanvas(self.Figure)
+
         # add FigureCanvas to Layout
         self.FigureLayout.addWidget(self.FigureCanvas)
         
         self.axis = self.Figure.add_subplot(1,1,1)
-        self.axis.plot(1,1)
+#        self.axis.plot(1,1)
         
     def initControlWidget(self):
         
@@ -393,7 +395,6 @@ class Application(QtWidgets.QMainWindow):
         self.AxisInfo.spines["left"].set_visible(False)
         self.AxisInfo.spines["top"].set_visible(False)
         self.AxisInfo.spines["bottom"].set_visible(False)
-        self.show()
         
     def initExpoInfo(self):
         self.AxisInfo.clear()
@@ -481,9 +482,10 @@ class Application(QtWidgets.QMainWindow):
         self.InfoCanvas.draw()
 
     def UpdateDist(self):
-        self.axis.clear()
+        self.axis.cla()
         self.FigureCanvas.draw()
         self.AddDist()
+
             
     def AddDist(self):
         if self.PauseButton.isChecked() and self.OneUpdateFlag == 0 :
@@ -503,7 +505,7 @@ class Application(QtWidgets.QMainWindow):
     def AddExponential(self):
         tau = self.CurrentValues[0].value()
         
-        self.axis = self.Figure.add_subplot(1,1,1)
+        #self.axis = self.Figure.add_subplot(1,1,1)
         ex = expon(scale=tau)
         x = np.linspace(ex.ppf(0.05),ex.ppf(0.95),1000)
         if self.SelectType.currentText() == "Probability Density Function":
@@ -519,7 +521,7 @@ class Application(QtWidgets.QMainWindow):
         n_bin = self.binSpinBox.value()
         i_th = self.sld.value()
         
-        self.axis.plot(x,y,color = cm(i_th/n_bin))
+        self.axis.plot(x,y ,color = cm(i_th/n_bin))
         self.axis.set_title("Exponential Distribution")
         self.FigureCanvas.draw()
 
@@ -532,7 +534,6 @@ class Application(QtWidgets.QMainWindow):
         mu = self.CurrentValues[0].value()
         sigma = self.CurrentValues[1].value()
         
-        self.axis = self.Figure.add_subplot(1,1,1)
         nm= norm(loc = mu,scale = sigma)
         x = np.linspace(nm.ppf(0.05),nm.ppf(0.95),1000)
         if self.SelectType.currentText() == "Probability Density Function":
@@ -559,7 +560,6 @@ class Application(QtWidgets.QMainWindow):
         b = self.CurrentValues[1].value()
         scale = 1/b
         
-        self.axis = self.Figure.add_subplot(1,1,1)
         gm= gamma(a = a,scale = scale)
         x = np.linspace(gm.ppf(0.05),gm.ppf(0.95),1000)
         if self.SelectType.currentText() == "Probability Density Function":
