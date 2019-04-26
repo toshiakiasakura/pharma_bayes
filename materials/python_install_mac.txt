@@ -1,0 +1,134 @@
+######### python installation  #########
+
+# * #がない部分をターミナル(MAC OS X)に
+# 入力していってください.
+# 色々一気に画面が出ますがビビらず進めてください.
+# download などのキャンセルは Ctrl+c で可能です.
+# pythonをただ入れるだけだと楽なんですがversion管理しないと
+# errorが起こることがあるのでそれを見越して
+# installの手順が煩雑になっています. 
+
+#### インストールに用いるプログラム #####
+# pyenv : for version control 
+# virtualenv : for virtual environment 
+# anaconda : for package control, python distribution 
+
+<download homebrew>
+# xcode が入ってなければインストールしてください
+
+xcode-select --install
+
+# homebrewのインストールです. (以下のコードをそのまま入れてください) 
+
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# check install successfully or not 
+
+brew doctor 
+
+# warning が出てもタイプしたコードのすぐ下に太字で以下の文章が書かれていれば問題ない. 
+### Please note that these warnings are just used to help the Homebrew maintainers
+### with debugging if you file an issue. If everything you use Homebrew for is
+### working fine: please don't worry or file an issue; just ignore this. Thanks!
+
+
+########### uninstall conda and pyenv ##############
+# * pythonを既にダウンロードしてversion管理をしっかりするために環境づくりする人向け
+# pythonをまだdownloadしていない人は install virtualenv まで飛んでください.
+
+# find でfileがどこにあるか探す. pathが判明したらrmで削除
+find . -iname *conda* 
+find . -iname *pyenv* 
+sudo rm -rf [path to .anaconda]
+rm -rf [path to .pyenv]
+
+########### install virtualenv #################
+
+# install pyenv and virtualenv 
+# * もし管理者権限が必要ならば sudo brew install pyenv を試してみてください
+
+brew install pyenv 
+brew install pyenv-virtualenv
+
+# 以下、terminalを開くたびにpyenvを反映させるための設定
+# ターミナル上において
+cd 
+emacs .bash_profile
+
+# emacsはtext editorの一つです. 
+# 何も書いてなければその場所に、書いてあれば一番下に以下のコードをcopy and pasteしてください。
+
+PYENV_ROOT=~/.pyenv
+export PATH=$PATH:$PYENV_ROOT/bin
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# copy and pasteをしたら、Ctrl+x 、続けて Ctrl+s で上書き保存、 
+# Ctrl+x 続けて Ctrl+c でeditorを終了させられます. 
+
+############# setting of pyenv #############
+
+# check what version can be installed by pyenv 
+
+pyenv install —-list
+
+# anacond3の version5.3.1をdownloadします. この作業はしばらく時間かかります.
+
+pyenv install anaconda3-5.3.1
+
+
+# check version used now
+pyenv versions 
+
+# こんな感じの画面が出てくるはずです. 
+# * がついた部分が現在選択している環境です.
+###  * system
+###  anaconda3-5.3.1 (set by /Users/asakuratoshihisa/.pyenv/version)
+
+# change version
+
+pyenv global anaconda3-5.3.1
+pyenv versions
+
+# 下のように*が移っているはずです. 
+###  system
+###  * anaconda3-5.3.1 (set by /Users/asakuratoshihisa/.pyenv/version)
+
+# これでpyenvによるpythonのinstallationが完了します. 
+# python と打つと以下のような画面がでます. 
+### Python 3.7.0 (default, Jun 28 2018, 07:39:16) 
+### [Clang 4.0.1 (tags/RELEASE_401/final)] :: Anaconda, Inc. on darwin
+### Type "help", "copyright", "credits" or "license" for more information.
+### >>> 
+
+#　以下のコマンドを打って動くこと確認してください
+a = 1 
+print(a) 
+
+# pythonを終了するには以下のコードです.
+exit() 
+
+# 以下のコマンドを打つと新しいブラウザでjupyter notebook が起動するのを確認してください
+jupyter notebook 
+
+# jupyter notebook の終了の仕方はjupyter notebook と打ったterminalにおいて 
+# Ctrl+cを押してください. 
+# .ipynbを拡張子に持つファイルはこのjupyter notebookから開くことが可能です. 
+
+# なにかダウンロードされていないと表示された場合には
+pip install [package name] 
+#　でinstallできます. 出来なければ
+brew install [package name]
+#　を試してみてください. 
+# ex. 
+pip install PyQt5 
+
+<Reference> 
+綺麗にAnacondaをアンイストールする方法 For macOS
+https://ai-coordinator.jp/anaconda-uninstall-for-maxos
+pythonのアンインストール(pyenv のuninstall)
+https://qiita.com/SonoT/items/24f8a14555aea4961f9b
+
+mac OSにHomebrewをインストール   
+https://qiita.com/pypypyo14/items/4bf3b8bd511b6e93c9f9
+

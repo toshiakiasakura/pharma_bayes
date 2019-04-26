@@ -1,0 +1,48 @@
+############### Github setup #############
+
+########## for mac 
+
+# 使用するためにはxcodeが必要です. 
+# 以下のコードで入れられると思います. 
+
+xcode-select --install 
+
+# その後に次のコードを入れればinstallされます. 
+cd 
+git clone https://github.com/toshiakiasakura/phama_bayes.git 
+
+# installはデフォルトだとホームディレクトリーにあるはずです.
+# terminalを使ってdirectry間の移動の意味が分かるまでは
+# fileの位置は動かさないでください. 
+
+######### for windows 
+
+# Github for DesktopのWindows版をダウンロードしてください.
+# https://desktop.github.com/ 
+
+# * 動かなかったらプラスαでgithubをinstallしてください.
+# https://www.atmarkit.co.jp/ait/articles/1603/31/news026.html
+# 参考
+
+# * メールアドレスは適当なもので大丈夫です. 会員登録するわけではないので. 
+
+# Github for Desktopをsetupしたら
+# sign up やsign in を求められるのでskipしてください. 
+# skipし続けるとnameとe-mail addressの入力が避けられなくなる
+# 段階があると思うので適当なnameとe-mail addressを入力してください
+
+# 次に、どのようにしてcloneするか、が出てきたら下のurlを入力してください.
+https://github.com/toshiakiasakura/pharma_bayes.git 
+
+# cloneに成功するとドキュメント/Github/phama_bayes　とファイルが
+# 作られるはずです. それか Ctrl + Shift + F でフォルダーが直接
+# 開けます。
+
+# 最新の状態にするためには、Github Desktopのアプリを開いて
+# 左上に Current repository がpharma_bayes であることを確認
+# した上で、Fetch origin をclickします. 
+
+# これでupしているfileが確認できます. 
+ 
+
+
